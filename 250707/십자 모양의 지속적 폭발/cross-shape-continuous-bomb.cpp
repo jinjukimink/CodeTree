@@ -45,10 +45,7 @@ void bomb(int col){
         row=i;
         break;
     }//폭탄이 터질 중심 위치 확인
-
-
     movements=grid[row][col];
-    //cout<<"폭탄이 터질 위치 "<<row<<','<<col<<','<<movements<<endl;
     grid[row][col]=0;
     
     if(movements==1) {
@@ -62,7 +59,7 @@ void bomb(int col){
         for(int j=0;j<(movements-1);j++){
             int nx = curRow + dx[i];
             int ny = curCol + dy[i];
-            if(range(nx,ny) && grid[nx][ny]!=0){
+            if(range(nx,ny)){
                 grid[nx][ny]=0;
                 curRow=nx;
                 curCol=ny;
