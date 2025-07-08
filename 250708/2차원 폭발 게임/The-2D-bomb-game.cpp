@@ -37,20 +37,32 @@ void bomb(vector<vector<int>>&grid){
     //debug(grid);
 }
 
+// void gravity(vector<vector<int>>&v){
+//     for(int col=1;col<=n;col++){
+//         int cnt=0;
+//         for(int row=n;row>=1;row--){
+//             if(v[row][col]!=0) continue;
+//             for(int subrow=row-1;subrow>=1;subrow--){
+//                 if(v[subrow][col]==0) continue;
+//                 v[row-(cnt++)][col]=v[subrow][col];
+//                 v[subrow][col]=0;//빈자리
+//             }
+//         }
+//     }
+//     //cout<<"\n중력의 영향을 받은 후\n";
+//     //debug(v);
+// }
+
 void gravity(vector<vector<int>>&v){
     for(int col=1;col<=n;col++){
-        int cnt=0;
+        int write = n;
         for(int row=n;row>=1;row--){
-            if(v[row][col]!=0) continue;
-            for(int subrow=row-1;subrow>=1;subrow--){
-                if(v[subrow][col]==0) continue;
-                v[row-(cnt++)][col]=v[subrow][col];
-                v[subrow][col]=0;//빈자리
+            if(v[row][col]!=0){
+                v[write--][col] = v[row][col];
             }
         }
+        while(write>=1) v[write--][col]=0;
     }
-    //cout<<"\n중력의 영향을 받은 후\n";
-    //debug(v);
 }
 
 vector<vector<int>>rotate(vector<vector<int>>&v){
