@@ -101,9 +101,12 @@ int main(){
         gravity(grid);
         vector<vector<int>>rotateGrid = rotate(grid);
         gravity(rotateGrid);
-        bomb(rotateGrid);
+        //bomb(rotateGrid);
         grid=rotateGrid;
     }
+    
+    bomb(grid);
+
     cout<<solution(grid)<<'\n';
     return 0;
 }
