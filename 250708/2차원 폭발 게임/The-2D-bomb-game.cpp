@@ -87,8 +87,12 @@ int main(){
             cin>>grid[i][j];
         }
     }
-    if(n==1){
+    if(m==1){//혼자만 있어도 다 터짐 반복문 돌 필요도 없음
         cout<<0<<'\n';
+        return 0;
+    }
+    if(n<m){//
+        cout<<n*n<<'\n';
         return 0;
     }
 
