@@ -87,6 +87,10 @@ int main(){
             cin>>grid[i][j];
         }
     }
+    if(n==1){
+        cout<<0<<'\n';
+        return 0;
+    }
 
     while(k--){
         bomb(grid);
@@ -94,7 +98,6 @@ int main(){
         vector<vector<int>>rotateGrid = rotate(grid);
         gravity(rotateGrid);
         bomb(rotateGrid);
-
         grid=rotateGrid;
     }
     cout<<solution(grid)<<'\n';
