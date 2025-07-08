@@ -96,13 +96,15 @@ int main(){
         return 0;
     }
 
-    while(k--){
-        bomb(grid);
+    while (k--) {
+        while (true) {
+            vector<vector<int>> prev = grid;
+            bomb(grid);
+            gravity(grid);
+            if (grid == prev) break; // 더 이상 안 터지면 break
+        }
+        grid = rotate(grid);
         gravity(grid);
-        vector<vector<int>>rotateGrid = rotate(grid);
-        gravity(rotateGrid);
-        //bomb(rotateGrid);
-        grid=rotateGrid;
     }
     //만약 k번째 회전을 진행한 이후에도 터질 폭탄이 상자에 남아있다면 터트려야 하
     bomb(grid);
