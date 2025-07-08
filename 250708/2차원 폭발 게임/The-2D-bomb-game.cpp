@@ -104,7 +104,7 @@ int main(){
         //bomb(rotateGrid);
         grid=rotateGrid;
     }
-    
+    //만약 k번째 회전을 진행한 이후에도 터질 폭탄이 상자에 남아있다면 터트려야 하
     bomb(grid);
 
     cout<<solution(grid)<<'\n';
