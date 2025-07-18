@@ -51,7 +51,8 @@ int main() {
         totalSum+=num[i];
     }
     //cout<<"totalSum: "<<totalSum<<endl;
-    makeCombi(0);
+    combi.push_back(0);
+    makeCombi(1);
     cout<<ans<<endl;
 
     // Please write your code here.
